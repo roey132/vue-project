@@ -24,7 +24,8 @@ import catering_logo from "../assets/catering_logo.png"
     width:7em;
 }
 .toolbar-button{
-    width:20em;
+    width:5em;
     background-color: rgb(152,194,68);
+    font-size: 3em;
 }
 </style>

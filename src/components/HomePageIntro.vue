@@ -32,6 +32,7 @@ import banner_photo from "../assets/banner_photo.png"
 }
 .banner-text{
     text-align: right;
+    padding-right:7em;
 }
 .banner-title{
     font-size:8em;
