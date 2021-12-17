@@ -12,7 +12,7 @@ import catering_logo from "../assets/catering_logo.png"
 </template>
 
 
-<style>
+<style scoped>
 .toolbar{
     display:flex;
     direction:rtl;
