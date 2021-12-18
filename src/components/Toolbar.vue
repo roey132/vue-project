@@ -18,7 +18,14 @@ import catering_logo from "../assets/catering_logo.png"
     direction:rtl;
     height:7em;
     background-color: rgb(152,194,68);
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 8px 6px -6px black;
+    position: fixed;
+    top:0;
+    width:100%;
 }
+
 .icon{
     height:7em;
     width:7em;

@@ -24,10 +24,11 @@ import event_background from "../assets/event_background.png"
     display:flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: rgb(236,233,228);
 }
 .image{
     border-radius: 40px;
-    height:42em;
-    width:42em;
+    height:25vw;
+    width:25vw;
 }
 </style>

@@ -22,9 +22,14 @@ import banner_photo from "../assets/banner_photo.png"
 
 <style scoped>
 .intro-banner{
+    margin-top: 7em;
     height: 40em;
     display:flex;
     justify-content: space-between;
+    background-color: rgb(224, 221, 214);
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 8px 6px -6px black;
 }
 .banner-photo{
     height:38em;
@@ -35,7 +40,7 @@ import banner_photo from "../assets/banner_photo.png"
     padding-right:7em;
 }
 .banner-title{
-    font-size:8em;
+    font-size:6em;
 }
 .banner-info{
     font-size:3em;
