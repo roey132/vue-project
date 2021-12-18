@@ -20,7 +20,7 @@ import event_background from "../assets/event_background.png"
 
 <style scoped>
 .picture-trio{
-    height:45em;
+    height:30vw;
     display:flex;
     align-items: center;
     justify-content: space-evenly;
@@ -28,7 +28,7 @@ import event_background from "../assets/event_background.png"
 }
 .image{
     border-radius: 40px;
-    height:25vw;
+    height:17.857vw;
     width:25vw;
 }
 </style>

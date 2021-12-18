@@ -16,23 +16,24 @@ import catering_logo from "../assets/catering_logo.png"
 .toolbar{
     display:flex;
     direction:rtl;
-    height:7em;
+    height:5em;
     background-color: rgb(152,194,68);
 	-webkit-box-shadow: 0 8px 6px -6px black;
 	-moz-box-shadow: 0 8px 6px -6px black;
 	box-shadow: 0 8px 6px -6px black;
-    position: fixed;
+    position: relative;
     top:0;
     width:100%;
 }
 
 .icon{
-    height:7em;
-    width:7em;
+    height:5em;
+    width:5em;
 }
 .toolbar-button{
-    width:5em;
+    width:10em;
     background-color: rgb(152,194,68);
-    font-size: 3em;
+    font-size: 15px;
+    border:0;
 }
 </style>

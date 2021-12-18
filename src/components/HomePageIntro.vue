@@ -22,8 +22,7 @@ import banner_photo from "../assets/banner_photo.png"
 
 <style scoped>
 .intro-banner{
-    margin-top: 7em;
-    height: 40em;
+    height: 30em;
     display:flex;
     justify-content: space-between;
     background-color: rgb(224, 221, 214);
@@ -32,17 +31,23 @@ import banner_photo from "../assets/banner_photo.png"
 	box-shadow: 0 8px 6px -6px black;
 }
 .banner-photo{
-    height:38em;
+    height:28em;
+    width:28em;
     padding:1em;
+    margin-left: 1em;
 }
 .banner-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: right;
     text-align: right;
     padding-right:7em;
 }
 .banner-title{
-    font-size:6em;
+    font-size:60px;
 }
 .banner-info{
-    font-size:3em;
+    font-size:23px;
 }
 </style>
