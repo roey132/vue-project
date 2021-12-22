@@ -13,9 +13,6 @@ import banner_photo from "../assets/banner_photo.png"
         פה לא בטוח שיהיה כתוב כי 3 שורות זה הרבה<br>
         </p>
     </div>
-
-
-
 </div>
 </template>
 
