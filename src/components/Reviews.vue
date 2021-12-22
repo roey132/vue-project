@@ -26,7 +26,7 @@ const showMore = ref(false)
         <Review :stars=review.stars :username=review.username :text=review.text />
     </div>
 </div>
-<div>
+<div class="show-more-container">
     <div v-if="showMore">
         <button  @click="showMore = false">הראה פחות..</button>
     </div>
@@ -53,6 +53,21 @@ const showMore = ref(false)
     max-height:15em;
 }
 button{
-    
+    background-color: rgb(224, 221, 214);
+    border: none;
+    font-size:1em;
+    margin:0;
+    height: 2em;   
+
+}
+.show-more-container{
+    background-color: rgb(224, 221, 214);
+    display: flex;
+    justify-content: center;
+    direction:rtl;
+    height:3em;
+}
+html{
+    overflow-y:scroll;
 }
 </style>
