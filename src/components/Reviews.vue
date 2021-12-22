@@ -50,7 +50,7 @@ const showMore = ref(false)
     max-height: 10em;
 }
 .show-more{
-    max-height:15em;
+    max-height:10em;
 }
 button{
     background-color: rgb(224, 221, 214);
@@ -58,7 +58,6 @@ button{
     font-size:1em;
     margin:0;
     height: 2em;   
-
 }
 .show-more-container{
     background-color: rgb(224, 221, 214);
