@@ -1,8 +1,14 @@
 <script setup>
 import {ref} from "vue"
+import Review from "./Review.vue"
 
 const reviews = ref([{username:"רותם הגבר", text:"עלכם כםקכ כ'ל כ/ ךכך'כך  כך'כל /'לכ לכ'ךכ ל'כ כ",stars:5},
-                     {username:"רותם הלא גבר", text:"נ נח נחמ נחמן מאומן",stars:1}])
+                     {username:"רותם הלא גבר", text:"נ נח נחמ נחמן מאומן",stars:1},
+                     {username:"רותם הלא גבר", text:"נ נח נחמ נחמן מאומן",stars:2},
+                     {username:"רותם גבר", text:"נ נח נחמ נחמן מאומן",stars:4},
+                     {username:"רותם הלא גבר", text:"נ נח נחמ נחמן מאומן",stars:1},
+                     {username:"רותם גבר", text:"נ נח נחמ נחמן מאומן",stars:5},
+                     {username:"רותם הכמעט גבר", text:"נ נח נחמ נחמן מאומן",stars:3}])
 
 const showMore = ref(false)
 
@@ -10,19 +16,26 @@ const showMore = ref(false)
 
 
 <template>
-<div class="reviews-box">
-    <div v-for="review in reviews.slice(0,3)" :key="review.index">
-        <div class="review">
-            <div class="review-title">
-                <b>{{review.username}}</b>
-                &nbsp;&nbsp;&nbsp;
-                <p v-if="review.stars>1">{{review.stars}} כוכבים!</p>
-                <p v-else>כוכב {{review.stars}} איזה הומו נודר</p>
-            </div>
-            <p>{{review.text}}</p>
-        </div>
+<div v-if="!showMore" class="reviews-box show-less">
+    <div  v-for="review in reviews.slice(0,3)" :key="review.index">
+        <Review :stars=review.stars :username=review.username :text=review.text />
     </div>
 </div>
+<div v-else class="reviews-box show-more">
+    <div  v-for="review in reviews" :key="review.index">
+        <Review :stars=review.stars :username=review.username :text=review.text />
+    </div>
+</div>
+<div>
+    <div v-if="showMore">
+        <button  @click="showMore = false">הראה פחות..</button>
+    </div>
+    <div v-else>
+        <button @click="showMore = true">הראה עוד..</button>
+    </div>
+</div>
+
+
 </template>
 
   
@@ -33,31 +46,13 @@ const showMore = ref(false)
     overflow-x: hidden;
     overflow-y: auto;
 }
-.reviews-box-show-less{
-    max-height: 9em;
+.show-less{
+    max-height: 10em;
 }
-
-.reviews-box-show-more{
+.show-more{
     max-height:15em;
 }
-.review{
-    margin-right:5em;
-    height: 3em;
-}
-.review-title{
-    direction: rtl;
-    display:flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-b{
-    font-size:1.2em;
-    line-height:1.2em;
-}
-p{
-    direction: rtl;
-    font-size: 1em;
-    line-height:1em;
-    margin:0;
+button{
+    
 }
 </style>
