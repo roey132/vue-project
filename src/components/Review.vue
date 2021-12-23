@@ -20,7 +20,6 @@ defineProps({
 
 <style scoped>
 .review{
-    margin-right:5em;
     height: 3em;
 }
 .review-title{

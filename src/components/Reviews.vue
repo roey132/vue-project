@@ -16,30 +16,46 @@ const showMore = ref(false)
 
 
 <template>
-<div v-if="!showMore" class="reviews-box show-less">
-    <div  v-for="review in reviews.slice(0,3)" :key="review.index">
-        <Review :stars=review.stars :username=review.username :text=review.text />
+<div class="reviews-banner">
+        <h1>ביקורות</h1>
+    <div v-if="!showMore" class="reviews-box show-less">
+        <div  v-for="review in reviews.slice(0,3)" :key="review.index">
+            <Review :stars=review.stars :username=review.username :text=review.text />
+        </div>
+    </div>
+    <div v-else class="reviews-box show-more">
+        <div  v-for="review in reviews" :key="review.index">
+            <Review :stars=review.stars :username=review.username :text=review.text />
+        </div>
+    </div>
+    <div class="show-more-container">
+        <div v-if="showMore">
+            <button  @click="showMore = false">הראה פחות..</button>
+        </div>
+        <div v-else>
+            <button @click="showMore = true">הראה עוד..</button>
+        </div>
     </div>
 </div>
-<div v-else class="reviews-box show-more">
-    <div  v-for="review in reviews" :key="review.index">
-        <Review :stars=review.stars :username=review.username :text=review.text />
-    </div>
-</div>
-<div class="show-more-container">
-    <div v-if="showMore">
-        <button  @click="showMore = false">הראה פחות..</button>
-    </div>
-    <div v-else>
-        <button @click="showMore = true">הראה עוד..</button>
-    </div>
-</div>
+
 
 
 </template>
 
   
 <style scoped>
+.reviews-banner{
+    width:86%;
+    padding-right: 7%;
+    padding-left:7%;
+    background-color: rgb(224, 221, 214);
+
+}
+h1{
+    margin:0;
+    text-align: right;
+    font-size: 1.5em;
+}
 .reviews-box{
     background-color: rgb(224, 221, 214);
     overflow:scroll;
@@ -47,10 +63,10 @@ const showMore = ref(false)
     overflow-y: auto;
 }
 .show-less{
-    max-height: 10em;
+    max-height: 9em;
 }
 .show-more{
-    max-height:10em;
+    max-height:9em;
 }
 button{
     background-color: rgb(224, 221, 214);

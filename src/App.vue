@@ -1,13 +1,13 @@
 <script setup>
 import Toolbar from './components/Toolbar.vue'
 import HomePage from './components/HomePage.vue'
-import Footer from './components/AppFooter.vue'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
 <Toolbar/>
 <HomePage/>
-<Footer/>
+<AppFooter/>
 </template>
 
 <style>

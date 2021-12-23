@@ -8,6 +8,8 @@ import catering_logo from "../assets/catering_logo.png"
     <img :src=catering_logo class="icon">
     <button id="gallery" class="toolbar-button">גלריה</button>
     <button id="contact-us" class="toolbar-button">צרו קשר</button>
+    <button id="blog" class="toolbar-button">בלוג</button>
+
 </div>
 </template>
 
@@ -27,11 +29,13 @@ import catering_logo from "../assets/catering_logo.png"
 }
 
 .icon{
-    height:5em;
-    width:5em;
+    height:4.8em;
+    width:4.8em;
+    padding:0.1em;
+    border-radius: 100px;
 }
 .toolbar-button{
-    width:10em;
+    width:7em;
     background-color: rgb(152,194,68);
     font-size: 15px;
     border:0;
