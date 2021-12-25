@@ -1,7 +1,7 @@
 <script setup>
-import whatsapp from "../assets/whatsapp.png"
-import instagram from "../assets/instagram.png"
-import facebook from "../assets/facebook.png"
+import whatsapp from "@/assets/whatsapp.png"
+import instagram from "@/assets/instagram.png"
+import facebook from "@/assets/facebook.png"
 </script>
 
 <template>

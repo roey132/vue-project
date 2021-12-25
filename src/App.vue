@@ -1,7 +1,7 @@
 <script setup>
 import Toolbar from './components/Toolbar.vue'
 import HomePage from './components/HomePage.vue'
-import AppFooter from './components/AppFooter.vue'
+import AppFooter from './components/footer/AppFooter.vue'
 </script>
 
 <template>

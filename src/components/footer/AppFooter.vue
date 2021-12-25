@@ -7,8 +7,6 @@ import FooterSocials from "./FooterSocials.vue"
 <div class="footer">
     <FooterLocation/>
     <FooterSocials/>
-
-    
     <div class="about">
         <h1>
             קצת עלינו
