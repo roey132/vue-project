@@ -1,12 +1,21 @@
 <script setup>
-import Toolbar from './components/Toolbar.vue'
+import Toolbar from './components/toolbar/Toolbar.vue'
 import HomePage from './components/homepage/HomePage.vue'
 import AppFooter from './components/footer/AppFooter.vue'
+import Gallery from './components/gallery/Gallery.vue'
+
+import { ref } from 'vue'
+const page = ref("home")
+
+function changePage(pageValue){
+  page.value = pageValue
+}
 </script>
 
 <template>
-<Toolbar/>
-<HomePage/>
+<Toolbar @change-page="changePage" />
+<HomePage v-if="page === 'home'"/>
+<Gallery v-else-if="page==='gallery'"/>
 <AppFooter/>
 </template>
 
