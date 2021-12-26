@@ -1,5 +1,5 @@
 <script setup>
-import banner_photo from "../assets/banner_photo.png"
+import banner_photo from "@/assets/banner_photo.png"
 </script>
 
 

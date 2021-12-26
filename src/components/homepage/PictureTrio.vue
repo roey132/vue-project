@@ -1,7 +1,7 @@
 <script setup>
-import desserts from "../assets/desserts.png"
-import meat from "../assets/meat.png"
-import event_background from "../assets/event_background.png"
+import desserts from "@/assets/desserts.png"
+import meat from "@/assets/meat.png"
+import event_background from "@/assets/event_background.png"
 </script>
 
 <template>
