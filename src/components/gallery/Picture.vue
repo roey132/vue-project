@@ -24,9 +24,5 @@ const props = defineProps({
     margin:0.25em;
     overflow: hidden;
 }
-.image{
-    width:auto;
-    height:auto;
-    object-fit: cover;
-}
+
 </style>

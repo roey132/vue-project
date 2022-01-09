@@ -4,7 +4,7 @@ import Picture from './Picture.vue'
 import PictureCollage from './PictureCollage.vue'
 import { ref } from 'vue'
 
-const galleryType = ref("All")
+const galleryType = ref("all")
 
 
 function changeType(type){
@@ -20,11 +20,18 @@ const galleryTypes = [{"title":"הכל","value":"all"},
 
 
 <template>
-<GalleryCategoryButtonVue v-for="type in galleryTypes" :key="type.index" :title="type.title" :value="type.value" @gallery-type="changeType" />
-<PictureCollage />
+<div class="buttons-flex">
+    <GalleryCategoryButtonVue v-for="type in galleryTypes" :key="type.index" :title="type.title" :value="type.value" @gallery-type="changeType" />
+</div>
+<PictureCollage :typeFilter="galleryType"/>
 </template>
 
 
 <style scoped>
-
+.buttons-flex{
+    display:flex;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+}
 </style>

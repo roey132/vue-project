@@ -19,7 +19,14 @@ function myfunc(value) {
 
 <style scoped>
 button{
+    font-size:16px;
     height:100px;
     width:200px;
+    border:none;
+    border-right:1px solid;
+
+}
+button:first-child{
+    border-left:1px solid; 
 }
 </style>
