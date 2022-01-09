@@ -2,28 +2,43 @@
 import GalleryCategoryButtonVue from './GalleryCategoryButton.vue';
 import Picture from './Picture.vue'
 import PictureCollage from './PictureCollage.vue'
+import PictureCategoryContainer from './PictureCategoryContainer.vue';
 import { ref } from 'vue'
 
 const galleryType = ref("all")
 
+var imagesArray = []
+for(let i=1 ; i < 100; i++){
+    imagesArray.push('meat'+i+".png")
+    imagesArray.push('event_background'+i+".png")
+    imagesArray.push('desserts'+i+".png")
+}
 
 function changeType(type){
     galleryType.value = type 
     console.log(galleryType.value)
 }
 
-const galleryTypes = [{"title":"הכל","value":"all"},
-                     {"title":"בשרים","value":"meat"},
+const galleryTypes = [{"title":"בשרים","value":"meat"},
                      {"title":"קינוחים","value":"desserts"},
                      {"title":"אירועים","value":"event_background"}]
 </script>
 
 
 <template>
+<div>
+<PictureCategoryContainer v-for="type in galleryTypes" :key="type.index" :category="type.title" 
+:pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
+</div>
+
+<!--
 <div class="buttons-flex">
     <GalleryCategoryButtonVue v-for="type in galleryTypes" :key="type.index" :title="type.title" :value="type.value" @gallery-type="changeType" />
 </div>
 <PictureCollage :typeFilter="galleryType"/>
+-->
+
+
 </template>
 
 
