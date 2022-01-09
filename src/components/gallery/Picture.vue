@@ -9,7 +9,7 @@ const props = defineProps({
 
 <template>
 <div class="container">
-    <img :src="'/gallery/'+image">
+    <img class="image" :src="'/gallery/'+image">
 </div>
 
 </template>
@@ -19,15 +19,14 @@ const props = defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-    width:19%;
-    height:200px;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    margin-bottom: 10px;
+    width:13em;
+    height:13em;
+    margin:0.25em;
     overflow: hidden;
 }
-img{
-    width:300px;
-    height:300px;
+.image{
+    width:auto;
+    height:auto;
+    object-fit: cover;
 }
 </style>

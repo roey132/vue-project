@@ -22,9 +22,9 @@ const imagesList = ref(images)
 .picture-flex{
     display: flex;
     flex-wrap: wrap;
-    width:70%;
-    margin-left:15%;
-    margin-right: 15%;
+    width:70em;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 </style>
