@@ -1,7 +1,5 @@
 <script setup>
-import GalleryCategoryButtonVue from './GalleryCategoryButton.vue';
 import Picture from './Picture.vue'
-import PictureCollage from './PictureCollage.vue'
 import PictureCategoryContainer from './PictureCategoryContainer.vue';
 import { ref } from 'vue'
 
@@ -27,17 +25,9 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 
 <template>
 <div>
-<PictureCategoryContainer v-for="type in galleryTypes" :key="type.index" :category="type.title" 
+<PictureCategoryContainer v-for="type in galleryTypes" :key="type.index" :category="type.title"
 :pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
 </div>
-
-<!--
-<div class="buttons-flex">
-    <GalleryCategoryButtonVue v-for="type in galleryTypes" :key="type.index" :title="type.title" :value="type.value" @gallery-type="changeType" />
-</div>
-<PictureCollage :typeFilter="galleryType"/>
--->
-
 
 </template>
 
