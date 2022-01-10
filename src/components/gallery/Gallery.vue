@@ -1,7 +1,9 @@
 <script setup>
 import Picture from './Picture.vue'
 import PictureCategoryContainer from './PictureCategoryContainer.vue';
+import GalleryModal from './GalleryModal.vue'
 import { ref } from 'vue'
+import GalleryModal1 from './GalleryModal.vue';
 
 const galleryType = ref("all")
 
@@ -24,6 +26,7 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 
 
 <template>
+<GalleryModal/>
 <div class="gallery">
     <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
     :pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
@@ -45,5 +48,14 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 }
 html{
     background-color: rgb(236,233,228);
+}
+.dialog-container{
+    width:1000px;
+    height:600px;
+    background-color: gray;
+}
+.dialog{
+    position: absolute;
+    top: 0;
 }
 </style>
