@@ -15,7 +15,7 @@ function changePage(pageValue){
 <template>
 <Toolbar @change-page="changePage" />
 <HomePage v-if="page === 'home'"/>
-<Gallery v-else-if="page==='gallery'"/>
+<Gallery v-else-if="page === 'gallery'"/>
 <AppFooter/>
 </template>
 

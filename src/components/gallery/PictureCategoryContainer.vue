@@ -27,8 +27,14 @@ defineProps({
     margin-right: auto;
     margin-left: auto;
 }
+
 h1{
+    background-color: rgb(236,233,228);
     direction: rtl;
+    margin:0;
+}
+h1:first-child{
+    padding-top:1em;
 }
 .title-container{
     width:70em;

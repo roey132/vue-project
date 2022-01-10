@@ -24,9 +24,9 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 
 
 <template>
-<div>
-<PictureCategoryContainer v-for="type in galleryTypes" :key="type.index" :category="type.title"
-:pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
+<div class="gallery">
+    <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
+    :pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
 </div>
 
 </template>
@@ -38,5 +38,12 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
     width:100%;
     justify-content: center;
     align-items: center;
+}
+.gallery{
+    background-color: rgb(236,233,228);
+    padding-bottom: 2em;
+}
+html{
+    background-color: rgb(236,233,228);
 }
 </style>
