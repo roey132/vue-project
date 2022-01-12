@@ -1,26 +1,23 @@
 <script setup>
 import GalleryModal from './GalleryModal.vue'
 import Picture from "./Picture.vue"
-import { defineExpose, ref } from 'vue'
-
-const modal = ref(null)
-
-defineExpose({ modal })
+import { ref } from 'vue'
 
 defineProps({
     category:String,
     pictures:Array
 })
 const modalImage = ref("desserts1.png")
+const modalBool = ref(false)
 
 function changeModalImage(image){
     modalImage.value = image
+    modalBool.value=true
 }
-
 </script>
 
 <template>
-<GalleryModal ref="modal" :image="modalImage" />
+<GalleryModal v-if="modalBool" :image="modalImage" @close-modal="modalBool=false"/>
 
 <div class="title-container">
     <h1>{{category}}</h1>

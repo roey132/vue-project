@@ -8,7 +8,6 @@ import Reviews from "./Reviews.vue"
 <template>
   <HomePageIntro/>
   <PictureTrio/>
-  <Reviews/>
 </template>
 
 

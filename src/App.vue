@@ -4,7 +4,7 @@ import HomePage from './components/homepage/HomePage.vue'
 import AppFooter from './components/footer/AppFooter.vue'
 import Gallery from './components/gallery/Gallery.vue'
 import { ref } from 'vue'
-const page = ref("gallery")
+const page = ref("home")
 function changePage(pageValue){
   page.value = pageValue
 }
