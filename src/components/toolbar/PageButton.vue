@@ -9,6 +9,7 @@ const emit = defineEmits(['change-page'])
 function changePage(pageValue) {
     emit('change-page',pageValue)
 }
+
 </script>
 
 <template>

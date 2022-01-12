@@ -1,13 +1,14 @@
 <script setup>
 import Picture from './Picture.vue'
 import PictureCategoryContainer from './PictureCategoryContainer.vue';
-import GalleryModal from './GalleryModal.vue'
 import { ref } from 'vue'
-import GalleryModal1 from './GalleryModal.vue';
 
 const galleryType = ref("all")
-
 var imagesArray = []
+
+const modalImage = ref("test")
+
+
 for(let i=1 ; i < 100; i++){
     imagesArray.push('meat'+i+".png")
     imagesArray.push('event_background'+i+".png")
@@ -22,11 +23,13 @@ function changeType(type){
 const galleryTypes = [{"title":"בשרים","value":"meat"},
                      {"title":"קינוחים","value":"desserts"},
                      {"title":"אירועים","value":"event_background"}]
+
+
+
 </script>
 
 
 <template>
-<GalleryModal/>
 <div class="gallery">
     <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
     :pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />

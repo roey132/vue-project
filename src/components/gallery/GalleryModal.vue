@@ -1,22 +1,29 @@
 <script setup>
 import { ref } from 'vue';
 
+
 const modalBool= ref(false)
+
 function closeModal(){
     modalBool.value=false
 }
 function openModal(){
     modalBool.value=true
 }
+
+defineProps({
+    image:String
+})
+
 </script>
 
 <template>
-<button @click="openModal()">toggle</button>
-    <div class="modal" :class="{open: modalBool}" @click="closeModal()">
-        <div class="modal-content">
-            testing
-        </div>
+<button @click="openModal()">test</button>
+<div class="modal" :class="{open: modalBool}" @click="closeModal()">
+    <div class="modal-content">
+        <img :src="'/gallery/'+image">
     </div>
+</div>
 </template>
 
 <style scoped>
