@@ -9,9 +9,8 @@ import banner_photo from "@/assets/banner_photo.png"
     <div class="banner-text">
         <h1 class="banner-title-1">זיו אהרונוב</h1>
         <h1 class="banner-title-2">שף לאירועים</h1>
-        <p class="banner-info"> פה כתוב כמה דברים שמסבירים דברים על הסלוגן המעניין <br>
-        וגם פה עומד להיות כתוב דברים מעניינים<br>
-        פה לא בטוח שיהיה כתוב כי 3 שורות זה הרבה<br>
+        <p class="banner-info"> קייטרינג לכל סוגי האירועים בכל רחבי הארץ<br>
+        !חוויה שלא תשכחו לעולם! עם מגוון תפריטים למגוון סגנונות<br>
         </p>
     </div>
 </div>
@@ -33,6 +32,8 @@ import banner_photo from "@/assets/banner_photo.png"
     width:28em;
     padding:1em;
     margin-left: 1em;
+    margin-top:auto;
+    margin-bottom:auto;
 }
 .banner-text{
     display:flex;
@@ -41,6 +42,8 @@ import banner_photo from "@/assets/banner_photo.png"
     align-items: right;
     text-align: right;
     padding-right:7em;
+    margin-top:auto;
+    margin-bottom: auto;
 }
 .banner-title-1, .banner-title-2{
     font-size:60px;
@@ -49,7 +52,6 @@ import banner_photo from "@/assets/banner_photo.png"
 }
 .banner-title-1{
 margin-bottom:0;
-margin-top: 60px;
 }
 
 .banner-title-2{
@@ -60,5 +62,6 @@ margin-top: 60px;
 }
 .banner-info{
     font-size:23px;
+    margin-right:10px
 }
 </style>

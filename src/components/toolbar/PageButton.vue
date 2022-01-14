@@ -22,7 +22,8 @@ function changePage(pageValue) {
 .toolbar-button{
     width:7em;
     background-color: rgb(152,194,68);
-    font-size: 15px;
+    font-size: 17px;
     border:0;
+    font-weight: 500;
 }
 </style>

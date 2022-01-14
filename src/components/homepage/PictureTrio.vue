@@ -27,6 +27,7 @@ import event_background from "@/assets/event_background.png"
     background-color: rgb(236,233,228);
 }
 .image{
+    object-fit: cover;
     border-radius: 40px;
     height:17.857vw;
     width:25vw;

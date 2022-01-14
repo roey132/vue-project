@@ -1,20 +1,15 @@
 <script setup>
 import FooterLocation from "./FooterLocation.vue"
 import FooterSocials from "./FooterSocials.vue"
+import FooterAbout from "./FooterAbout.vue"
+
 </script>
 
 <template>
 <div class="footer">
     <FooterLocation/>
     <FooterSocials/>
-    <div class="about">
-        <h1>
-            קצת עלינו
-        </h1>
-        <p>
-            דברים שמספרים קצת עלינו
-        </p>
-    </div>
+    <FooterAbout/>
 </div>
 </template>
 
@@ -34,9 +29,4 @@ h1{
     border-top: 0.5em solid rgb(116, 148, 51);
 }
 
-.about{
-    width:30%;
-    display:flex;
-    flex-direction: column;
-}
 </style>

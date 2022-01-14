@@ -31,7 +31,6 @@ const emit = defineEmits(['close-modal'])
 
 .modal-content {
     background-color: #fefefe;
-    border: 1px solid #888;
     width: 1000px;
     height: 600px;
     position: absolute;
@@ -44,7 +43,7 @@ const emit = defineEmits(['close-modal'])
 
 .image{
     height:600px;
-    width:960px;
+    width:1000px;
     object-fit: contain;
 }
 </style>
