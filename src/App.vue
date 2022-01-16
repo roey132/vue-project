@@ -3,8 +3,10 @@ import Toolbar from './components/toolbar/Toolbar.vue'
 import HomePage from './components/homepage/HomePage.vue'
 import AppFooter from './components/footer/AppFooter.vue'
 import Gallery from './components/gallery/Gallery.vue'
+import ContactForm from './components/contact_form/ContactForm.vue'
+
 import { ref } from 'vue'
-const page = ref("home")
+const page = ref("contact")
 function changePage(pageValue){
   page.value = pageValue
 }
@@ -16,6 +18,7 @@ function changePage(pageValue){
     <Toolbar @change-page="changePage" />
     <HomePage v-if="page === 'home'"/>
     <Gallery v-else-if="page === 'gallery'"/>
+    <ContactForm v-else-if="page === 'contact'"/>
     
     <AppFooter/>
   </v-main>
