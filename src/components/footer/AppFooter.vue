@@ -25,7 +25,7 @@ h1{
     justify-content: space-around;
     height:12em;
     padding-top: 2em;
-    background-color: rgb(167, 212, 75);
+    background-color: rgb(152,194,68);
     border-top: 0.5em solid rgb(116, 148, 51);
 }
 

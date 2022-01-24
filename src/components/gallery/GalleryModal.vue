@@ -27,6 +27,7 @@ const emit = defineEmits(['close-modal'])
     overflow: hidden;
     background-color: rgba(0,0,0,0.4);
     display:block !important;
+    transition-duration: 2s;
 }
 
 .modal-content {

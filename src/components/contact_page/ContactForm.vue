@@ -4,6 +4,7 @@
 
 <template>
 <div class="form-container">
+    <h1>צרו קשר:</h1>
     <form action="">
         <label for="fname">שם מלא</label><br>
         <input class="field" type="text" name="fname" id="fname"><br>
@@ -43,7 +44,7 @@
 }
 .submit{
     text-align: center;
-    background-color: #4CAF50;
+    background-color: rgb(152,194,68);
     border-radius: 5px;
     width: 300px;
     height: 40px;
@@ -63,5 +64,13 @@ form{
 .form-container{
     background-color: rgb(224, 221, 214);
     width:400px;
+    border: 1px solid black;
+}
+h1{
+    direction: rtl;
+    text-align: center;
+}
+label{
+    font-weight: 500;
 }
 </style>
