@@ -4,6 +4,7 @@ import ContactForm from "./ContactForm.vue"
 
 <template>
 <div class="page">
+    <br><br>
     <h1>נשמח לשמוע מכם!</h1>
     <div class="contact-container">
         <div class="form-container">
@@ -15,7 +16,7 @@ import ContactForm from "./ContactForm.vue"
                 <p>כתובת מייל - zivaharonov@gmail.com</p>
             </div>
             <div class="contact-phone">
-                <h2>פנו אלינו בsms:</h2>
+                <h2>פנו אלינו whatsapp:</h2>
                 <p>מספר טלפון - 0507386157</p>
             </div>
             <div class="contact-facebook">
@@ -29,7 +30,7 @@ import ContactForm from "./ContactForm.vue"
         </div>
     </div>
     <p class="bottom-note">לכל שאלה ופנייה ניתן לפנות אלינו בכל אחת מדרכי התפניות הנ"ל, נשמח לשמוע מכם לכל נושא ולכל תהייה</p>
-    <br><br><br><br><br><br>
+    <br><br><br><br>
 </div>
 
 </template>
