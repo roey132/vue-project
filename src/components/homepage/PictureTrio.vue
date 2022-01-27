@@ -34,10 +34,10 @@ import event_background from "@/assets/event_background.png"
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
+    font-size: 2vw;
     background-color: rgba(200,200 ,200, 0.9);
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 2vw;
     border-radius: 5px;
     padding: 1rem;
     padding-right: 15rem;
