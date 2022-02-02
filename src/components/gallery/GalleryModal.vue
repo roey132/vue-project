@@ -42,6 +42,8 @@ const emit = defineEmits(['close-modal', 'swap-left', 'swap-right'])
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .image{
@@ -52,27 +54,23 @@ const emit = defineEmits(['close-modal', 'swap-left', 'swap-right'])
 .right-arrow{
     display:flex;
     position: absolute;
-    width:70px;
+    width:50px;
     height:100%;
     background-color: rgba(0, 0, 0, 0.75);
-    left:1000px;
+    left:950px;
     justify-content: center;
     align-items: center;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 .left-arrow{
     display:flex;
     position: absolute;
-    width:70px;
+    width:50px;
     margin-right:950px;
     height:100%;
-    left:-70px;
     justify-content: center;
     align-items:center;
     background-color: rgba(0, 0, 0, 0.75);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+
 }
 .arrow{
     width:30px;
@@ -80,6 +78,7 @@ const emit = defineEmits(['close-modal', 'swap-left', 'swap-right'])
     border-top: 2px solid white;
     border-right: 2px solid white;
     transform: rotate(45deg);
+    border-top-right-radius: 5px;
 }
 .left{
     transform:rotate(225deg);
