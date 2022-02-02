@@ -1,16 +1,19 @@
 <script setup>
 
 defineProps({
-    image:String,
+    image:Object,
 })
 const emit = defineEmits(['close-modal'])
 
 </script>
 
 <template>
+
 <div class="modal" @click.self="emit('close-modal')">
     <div class="modal-content">
-        <img class="image" :src="'/gallery/'+image">
+        <div class="right-arrow"><div class="arrow"></div></div>
+        <div class="left-arrow"><div class="arrow left"></div></div>
+        <img class="image" :src="'/gallery/'+image['link']">
     </div>
 </div>
 </template>
@@ -39,12 +42,46 @@ const emit = defineEmits(['close-modal'])
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.95);
-    border-radius: 10px;
 }
 
 .image{
     height:600px;
     width:1000px;
     object-fit: contain;
+}
+.right-arrow{
+    display:flex;
+    position: absolute;
+    width:70px;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    left:1000px;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.left-arrow{
+    display:flex;
+    position: absolute;
+    width:70px;
+    margin-right:950px;
+    height:100%;
+    left:-70px;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.arrow{
+    width:30px;
+    height:30px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+}
+.left{
+    transform:rotate(225deg);
 }
 </style>

@@ -10,9 +10,12 @@ const modalImage = ref("test")
 
 
 for(let i=1 ; i < 100; i++){
-    imagesArray.push('meat'+i+".png")
-    imagesArray.push('event_background'+i+".png")
-    imagesArray.push('desserts'+i+".png")
+    var img = {"link":'meat'+i+'.png', 'index':i, 'type':'meat'}
+    imagesArray.push(img)
+    img = {"link":'event_background'+i+'.png', 'index':i, 'type':'event_background'}
+    imagesArray.push(img)
+    img = {"link":'desserts'+i+'.png', 'index':i, 'type':'desserts'}
+    imagesArray.push(img)
 }
 
 function changeType(type){
@@ -32,7 +35,7 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 <template>
 <div class="gallery">
     <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
-    :pictures="imagesArray.filter(name => name.includes(type.value)).slice(0,5)" />
+    :pictures="imagesArray.filter(name => name['type'].includes(type.value)).slice(0,5)" />
 </div>
 
 </template>

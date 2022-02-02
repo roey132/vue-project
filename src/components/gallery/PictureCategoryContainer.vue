@@ -24,7 +24,7 @@ function changeModalImage(image){
 </div>
 
 <div class="pictures-flex">
-    <Picture  v-for="picture in pictures" :key="picture.index" :image="picture" @click="changeModalImage(picture)"/>
+    <Picture  v-for="picture in pictures" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture)"/>
 </div>
   
 </template>
