@@ -3,7 +3,7 @@
 defineProps({
     image:Object,
 })
-const emit = defineEmits(['close-modal'])
+const emit = defineEmits(['close-modal', 'swap-left', 'swap-right'])
 
 </script>
 
@@ -11,8 +11,8 @@ const emit = defineEmits(['close-modal'])
 
 <div class="modal" @click.self="emit('close-modal')">
     <div class="modal-content">
-        <div class="right-arrow"><div class="arrow"></div></div>
-        <div class="left-arrow"><div class="arrow left"></div></div>
+        <div class="right-arrow" @click="emit('swap-right')"><div class="arrow"></div></div>
+        <div class="left-arrow" @click="emit('swap-left')"><div class="arrow left"></div></div>
         <img class="image" :src="'/gallery/'+image['link']">
     </div>
 </div>

@@ -9,22 +9,36 @@ defineProps({
 })
 const modalImage = ref("desserts1.png")
 const modalBool = ref(false)
+const currIndex = ref(0)
 
-function changeModalImage(image){
-    modalImage.value = image
+function changeModalImage(image,images){
+    currIndex.value = images.findIndex((element) => element['index'] === image)
+    modalImage.value = images[currIndex.value]
     modalBool.value=true
+}
+function swapModalLeft(images){
+    if(currIndex.value !== 0 ){
+        currIndex.value--
+        modalImage.value = images[currIndex.value]
+    }
+}
+function swapModalRight(images){
+    if(currIndex.value !== 4){
+        currIndex.value++
+        modalImage.value = images[currIndex.value]
+    }
 }
 </script>
 
 <template>
-<GalleryModal v-if="modalBool" :image="modalImage" @close-modal="modalBool=false"/>
+<GalleryModal v-if="modalBool" :image="modalImage" @close-modal="modalBool=false" @swap-left="swapModalLeft(pictures)" @swap-right="swapModalRight(pictures)" />
 
 <div class="title-container">
     <h1>{{category}}</h1>
 </div>
 
 <div class="pictures-flex">
-    <Picture  v-for="picture in pictures" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture)"/>
+    <Picture  v-for="picture in pictures" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
 </div>
   
 </template>
