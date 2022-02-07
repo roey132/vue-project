@@ -38,7 +38,7 @@ function swapModalRight(images){
 </div>
 
 <div class="pictures-flex">
-    <Picture  v-for="picture in pictures" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
+    <Picture  v-for="picture in pictures.slice(0,5)" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
 </div>
   
 </template>

@@ -35,7 +35,7 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
 <template>
 <div class="gallery">
     <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
-    :pictures="imagesArray.filter(name => name['type'].includes(type.value)).slice(0,5)" />
+    :pictures="imagesArray.filter(name => name['type'].includes(type.value))" />
 </div>
 
 </template>

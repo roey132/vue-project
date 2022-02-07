@@ -4,11 +4,17 @@ import HomePage from './components/homepage/HomePage.vue'
 import AppFooter from './components/footer/AppFooter.vue'
 import Gallery from './components/gallery/Gallery.vue'
 import ContactPage from './components/contact_page/ContactPage.vue'
+import CategoryGallery from './components/gallery/CategoryGallery.vue'
 
 import { ref } from 'vue'
-const page = ref("contact")
+const page = ref("blog")
 function changePage(pageValue){
   page.value = pageValue
+}
+var imagesArray = []
+for(let i=1 ; i < 100; i++){
+    var img = {"link":'meat'+i+'.png', 'index':i, 'type':'meat'}
+    imagesArray.push(img)
 }
 </script>
 
@@ -19,7 +25,7 @@ function changePage(pageValue){
     <HomePage v-if="page === 'home'"/>
     <Gallery v-else-if="page === 'gallery'"/>
     <ContactPage v-else-if="page === 'contact'" />
-    
+    <CategoryGallery v-else-if="page==='blog'" :pictures="imagesArray"/>
     <AppFooter/>
   </v-main>
 </v-app>
