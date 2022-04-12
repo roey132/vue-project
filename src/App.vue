@@ -16,6 +16,10 @@ for(let i=1 ; i < 100; i++){
     var img = {"link":'meat'+i+'.png', 'index':i, 'type':'meat'}
     imagesArray.push(img)
 }
+
+function seeMore(category){
+  console.log(1)
+}
 </script>
 
 <template>
@@ -23,7 +27,7 @@ for(let i=1 ; i < 100; i++){
   <v-main>
     <Toolbar @change-page="changePage" />
     <HomePage v-if="page === 'home'"/>
-    <Gallery v-else-if="page === 'gallery'"/>
+    <Gallery v-else-if="page === 'gallery'" @see-more="seeMore"/>
     <ContactPage v-else-if="page === 'contact'" />
     <CategoryGallery v-else-if="page==='blog'" :pictures="imagesArray"/>
     <AppFooter/>

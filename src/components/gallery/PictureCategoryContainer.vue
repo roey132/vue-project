@@ -1,15 +1,19 @@
 <script setup>
 import GalleryModal from './GalleryModal.vue'
 import Picture from "./Picture.vue"
+import SeeMoreButton from "./SeeMoreButton.vue"
 import { ref } from 'vue'
 
 defineProps({
     category:String,
-    pictures:Array
+    pictures:Array,
+    typeValue:String,
 })
 const modalImage = ref("desserts1.png")
 const modalBool = ref(false)
 const currIndex = ref(0)
+
+const emit = defineEmits(['see-more'])
 
 function changeModalImage(image,images){
     currIndex.value = images.findIndex((element) => element['index'] === image)
@@ -31,16 +35,18 @@ function swapModalRight(images){
 </script>
 
 <template>
-<GalleryModal v-if="modalBool" :image="modalImage" @close-modal="modalBool=false" @swap-left="swapModalLeft(pictures)" @swap-right="swapModalRight(pictures)" />
+<div>
+    <GalleryModal v-if="modalBool" :image="modalImage" @close-modal="modalBool=false" @swap-left="swapModalLeft(pictures)" @swap-right="swapModalRight(pictures)" />
 
-<div class="title-container">
-    <h1>{{category}}</h1>
-</div>
+    <div class="title-container">
+        <h1>{{category}}</h1>
+    </div>
 
-<div class="pictures-flex">
-    <Picture  v-for="picture in pictures.slice(0,5)" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
+    <div class="pictures-flex">
+        <Picture  v-for="picture in pictures.slice(0,5)" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
+    </div>
+    <SeeMoreButton @see-more="emit('see-more',typeValue)" class='see-more'/>
 </div>
-  
 </template>
 
 <style scoped>
@@ -51,6 +57,13 @@ function swapModalRight(images){
     width:70em;
     margin-right: auto;
     margin-left: auto;
+}
+
+.see-more{
+    width: 70em;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: left;
 }
 
 h1{

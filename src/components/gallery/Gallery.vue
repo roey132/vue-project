@@ -3,6 +3,8 @@ import Picture from './Picture.vue'
 import PictureCategoryContainer from './PictureCategoryContainer.vue';
 import { ref } from 'vue'
 
+const emit = defineEmits(['see-more'])
+
 const galleryType = ref("all")
 var imagesArray = []
 
@@ -27,17 +29,19 @@ const galleryTypes = [{"title":"בשרים","value":"meat"},
                      {"title":"קינוחים","value":"desserts"},
                      {"title":"אירועים","value":"event_background"}]
 
-
+function seeMore(category){
+    console.log(category)
+    emit('see-more',category)
+}
 
 </script>
 
 
 <template>
 <div class="gallery">
-    <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title"
-    :pictures="imagesArray.filter(name => name['type'].includes(type.value))" />
+    <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title" :typeValue="type.value"
+    :pictures="imagesArray.filter(name => name['type'].includes(type.value))" @see-more="seeMore"/>
 </div>
-
 </template>
 
 
