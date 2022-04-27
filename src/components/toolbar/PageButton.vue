@@ -4,17 +4,13 @@ defineProps({
     pageName:String
 })
 
-const emit = defineEmits(['change-page'])
-
-function changePage(pageValue) {
-    emit('change-page',pageValue)
-}
-
 </script>
 
 <template>
 
-<button @click="changePage(pageValue)" id="gallery" class="toolbar-button">{{pageName}}</button>
+<router-link :to="pageValue" custom v-slot="{ navigate, href }">
+  <button class="toolbar-button" :href="href" @click="navigate">{{ pageName }}</button>
+</router-link>
 
 </template>
 

@@ -6,30 +6,13 @@ import Gallery from './components/gallery/Gallery.vue'
 import ContactPage from './components/contact_page/ContactPage.vue'
 import CategoryGallery from './components/gallery/CategoryGallery.vue'
 
-import { ref } from 'vue'
-const page = ref("blog")
-function changePage(pageValue){
-  page.value = pageValue
-}
-var imagesArray = []
-for(let i=1 ; i < 100; i++){
-    var img = {"link":'meat'+i+'.png', 'index':i, 'type':'meat'}
-    imagesArray.push(img)
-}
-
-function seeMore(category){
-  console.log(1)
-}
 </script>
 
 <template>
 <v-app>
   <v-main>
-    <Toolbar @change-page="changePage" />
-    <HomePage v-if="page === 'home'"/>
-    <Gallery v-else-if="page === 'gallery'" @see-more="seeMore"/>
-    <ContactPage v-else-if="page === 'contact'" />
-    <CategoryGallery v-else-if="page==='blog'" :pictures="imagesArray"/>
+    <Toolbar />
+    <router-view></router-view>
     <AppFooter/>
   </v-main>
 </v-app>
@@ -47,3 +30,4 @@ body{
   margin:0;
 }
 </style>
+

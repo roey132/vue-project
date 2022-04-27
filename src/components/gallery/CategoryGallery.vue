@@ -2,7 +2,7 @@
 import Picture from "./Picture.vue"
 
 defineProps({
-    pictures:Array
+    pictures:Array,
 })
 
 </script>

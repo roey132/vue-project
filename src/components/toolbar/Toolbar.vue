@@ -1,26 +1,16 @@
 <script setup>
 import catering_logo from "@/assets/catering_logo.png" 
 import PageButton from "./PageButton.vue"
-
-const emit = defineEmits(['change-page'])
-
-function changePage(pageValue) {
-    emit('change-page',pageValue)
-}
-
-const buttons = [{"pageName":"עמוד בית","pageValue":"home"},
-                {"pageName":"גלריה","pageValue":"gallery"},
-                {"pageName":"צור קשר","pageValue":"contact"},
-                {"pageName":"בלוג","pageValue":"blog"}]
-
+import {routes} from "@/router"
 
 </script>
 
 
 <template>
 <div class="toolbar">
+
     <img :src=catering_logo class="icon">
-    <PageButton v-for="button in buttons" :key="button.index" :pageValue=button.pageValue :pageName=button.pageName @change-page="changePage"/>
+    <PageButton v-for="route in routes.filter(r => r.meta?.button)" :key="route.index" :pageValue='route.path' :pageName='route.name' />
 
 </div>
 </template>

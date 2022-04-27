@@ -8,7 +8,6 @@ const emit = defineEmits(['close-modal', 'swap-left', 'swap-right'])
 </script>
 
 <template>
-
 <div class="modal" @click.self="emit('close-modal')">
     <div class="modal-content">
         <div class="right-arrow" @click="emit('swap-right')"><div class="arrow"></div></div>
