@@ -1,24 +1,15 @@
 <script setup>
 import Picture from './Picture.vue'
 import PictureCategoryContainer from './PictureCategoryContainer.vue';
+import * as data from '@/data.js'
 import { ref } from 'vue'
 
 const emit = defineEmits(['see-more'])
 
 const galleryType = ref("all")
-var imagesArray = []
+var images = data.imagesArray()
 
 const modalImage = ref("test")
-
-
-for(let i=1 ; i < 100; i++){
-    var img = {"link":'meat'+i+'.png', 'index':i, 'type':'meat'}
-    imagesArray.push(img)
-    img = {"link":'event_background'+i+'.png', 'index':i, 'type':'event_background'}
-    imagesArray.push(img)
-    img = {"link":'desserts'+i+'.png', 'index':i, 'type':'desserts'}
-    imagesArray.push(img)
-}
 
 function changeType(type){
     galleryType.value = type 
@@ -40,7 +31,7 @@ function seeMore(category){
 <template>
 <div class="gallery">
     <PictureCategoryContainer class="container" v-for="type in galleryTypes" :key="type.index" :category="type.title" :typeValue="type.value"
-    :pictures="imagesArray.filter(name => name['type'].includes(type.value))" @see-more="seeMore"/>
+    :pictures="images.filter(name => name['type'].includes(type.value))" @see-more="seeMore"/>
 </div>
 </template>
 

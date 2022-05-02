@@ -10,7 +10,7 @@ import {routes} from "@/router"
 <div class="toolbar">
 
     <img :src=catering_logo class="icon">
-    <PageButton v-for="route in routes.filter(r => r.meta?.button)" :key="route.index" :pageValue='route.path' :pageName='route.name' />
+    <PageButton v-for="route in routes.filter(route => route.meta?.button)" :key="route.index" :pageValue='route.path' :pageName='route.name' />
 
 </div>
 </template>

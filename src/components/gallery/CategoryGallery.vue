@@ -1,5 +1,11 @@
 <script setup>
 import Picture from "./Picture.vue"
+import {useRoute} from "vue-router"
+import * as data from '@/data.js'
+
+console.log(useRoute().params.category)
+
+const pictures = data.imagesArrayCategory(useRoute().params.category)
 
 defineProps({
     pictures:Array,

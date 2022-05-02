@@ -45,7 +45,9 @@ function swapModalRight(images){
     <div class="pictures-flex">
         <Picture  v-for="picture in pictures.slice(0,5)" :key="picture['index']" :image="picture['link']" @click="changeModalImage(picture['index'],pictures)"/>
     </div>
-    <SeeMoreButton @see-more="emit('see-more',typeValue)" class='see-more'/>
+    <div class="see-more">
+        <SeeMoreButton :category="'/gallery/'+typeValue"/>
+    </div>
 </div>
 </template>
 
